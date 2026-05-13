@@ -76,8 +76,28 @@ function SportsPage() {
 
       <section className="max-w-6xl mx-auto px-6 animate-in">
         <div className="text-center">
+          <p className="eyebrow">All The Sport · One Pub</p>
+          <h2 className="section-title mt-4">Every fixture covered.</h2>
+          <p className="mt-4 mx-auto max-w-2xl" style={{ color: "var(--cream-secondary)" }}>
+            From derby-day football to championship boxing, we screen the lot. Pull up a stool, get the round in, and settle in for the best seat in Chertsey.
+          </p>
+        </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {SPORTS.map((s) => (
+            <span key={s} className="px-4 py-2" style={{ border: "1px solid var(--gold-hairline)", borderRadius: 999, fontFamily: "var(--font-display)", fontSize: 11, letterSpacing: "0.18em", color: "var(--cream-primary)" }}>{s}</span>
+          ))}
+        </div>
+      </section>
+
+      <HeraldicDivider />
+
+      <section className="max-w-6xl mx-auto px-6 animate-in">
+        <div className="text-center">
           <p className="eyebrow">What's On</p>
-          <h2 className="section-title mt-4">Upcoming Events</h2>
+          <h2 className="section-title mt-4">Upcoming & Regular Events</h2>
+          <p className="mt-4 mx-auto max-w-2xl" style={{ color: "var(--cream-secondary)" }}>
+            Follow us on Facebook and Instagram for fixture updates, themed nights and special screenings.
+          </p>
         </div>
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {EVENTS.map((e, i) => (

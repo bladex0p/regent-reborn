@@ -137,6 +137,31 @@ function HomePage() {
 
       <HeraldicDivider />
 
+      {/* MAP */}
+      <section className="max-w-7xl mx-auto px-6 animate-in">
+        <div className="text-center">
+          <p className="eyebrow">Find Us</p>
+          <h2 className="section-title mt-4">126 Guildford Street, Chertsey KT16 9AH</h2>
+        </div>
+        <div className="mt-10 map-frame relative" style={{ border: "1px solid var(--gold-hairline)", borderRadius: 14, overflow: "hidden", minHeight: 460 }}>
+          <iframe
+            title="The Prince Regent — 126 Guildford Street, Chertsey KT16 9AH"
+            src="https://www.google.com/maps?q=126+Guildford+Street,+Chertsey+KT16+9AH&z=16&output=embed"
+            width="100%"
+            height="460"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            style={{ display: "block" }}
+          />
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <a href={SITE.maps} target="_blank" rel="noopener noreferrer" className="btn-gold">Open in Google Maps</a>
+          <a href={SITE.phoneTel} className="btn-gold">Call {SITE.phone}</a>
+        </div>
+      </section>
+
+      <HeraldicDivider />
+
       {/* CTA */}
       <section className="relative grain-overlay py-24 text-center" style={{ background: "linear-gradient(135deg, var(--crimson-deep), var(--bg-primary))" }}>
         <div className="max-w-3xl mx-auto px-6 relative z-10">

@@ -172,6 +172,36 @@ function HomePage() {
 
       <HeraldicDivider />
 
+      {/* HISTORY / SEO STORY */}
+      <section className="max-w-5xl mx-auto px-6 animate-in">
+        <div className="text-center">
+          <p className="eyebrow">Our Story · Since 1995</p>
+          <h2 className="section-title mt-4">Three decades of Chertsey hospitality.</h2>
+        </div>
+        <div className="mt-10 grid md:grid-cols-2 gap-10" style={{ color: "var(--cream-secondary)", fontSize: 17 }}>
+          <div>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--gold-primary)", letterSpacing: "0.15em" }}>THE STORY OF THE PRINCE REGENT</h3>
+            <p className="mt-4">Standing proudly on Guildford Street since 1995, The Prince Regent has spent three decades earning its place as one of the best loved pubs in Chertsey, Surrey. What began as a traditional British local has grown into a destination venue — a kitchen, a sports lounge and a community gathering point under one historic roof.</p>
+            <p className="mt-4">The fires still roar, the brass still gleams, and the welcome remains the same: warm, unfussy and genuinely Chertsey.</p>
+          </div>
+          <div>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--gold-primary)", letterSpacing: "0.15em" }}>CHERTSEY'S FAVOURITE LOCAL</h3>
+            <p className="mt-4">A short stroll from Chertsey town centre and an easy drive from Weybridge, Addlestone, Virginia Water, Runnymede and Woking. Locals come for the Sunday roast; visitors come for live sport, the Indian kitchen and a proper pint.</p>
+            <p className="mt-4">Whatever brings you in, you leave a regular.</p>
+          </div>
+          <div>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--gold-primary)", letterSpacing: "0.15em" }}>A PUB WITH HERITAGE</h3>
+            <p className="mt-4">A heritage pub in the truest British sense — wooden beams, polished bar, real ales pulled the proper way, and a kitchen that respects its craft. We pair classic British plates with authentic South Asian cuisine because Chertsey deserves both done well.</p>
+          </div>
+          <div>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: 16, color: "var(--gold-primary)", letterSpacing: "0.15em" }}>MORE THAN A PUB</h3>
+            <p className="mt-4">Live Premier League, Six Nations rugby, F1 and championship boxing on HD screens. Group dining and private hire for birthdays, corporate evenings and celebrations. NHS Blue Card discounts at the bar. There's a reason people travel from across Surrey to find us.</p>
+          </div>
+        </div>
+      </section>
+
+      <HeraldicDivider />
+
       {/* CTA */}
       <section className="relative grain-overlay py-24 text-center" style={{ background: "linear-gradient(135deg, var(--crimson-deep), var(--bg-primary))" }}>
         <div className="max-w-3xl mx-auto px-6 relative z-10">

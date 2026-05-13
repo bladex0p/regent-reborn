@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero3D } from "@/components/Hero3D";
-import { HeraldicDivider, FoodPlaceholder } from "@/components/SiteShell";
+import { HeraldicDivider } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import { MENU } from "@/lib/menu";
 import { MessageCircle, Star } from "lucide-react";
+import tandooriImg from "@/assets/food-tandoori.jpg";
+import roastImg from "@/assets/food-roast.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +57,9 @@ function HomePage() {
 
       {/* WELCOME */}
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center animate-in">
-        <FoodPlaceholder n={1} caption="Tandoori grills, stone-baked naan & cask ales" />
+        <figure className="tilt-card overflow-hidden">
+          <img src={tandooriImg} alt="Tandoori chicken tikka platters with mint yogurt at The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover" />
+        </figure>
         <div>
           <p className="eyebrow">A Royal Welcome</p>
           <h2 className="section-title mt-4">Two great traditions, one historic pub.</h2>

@@ -4,8 +4,8 @@ import { HeraldicDivider } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import { MENU } from "@/lib/menu";
 import { MessageCircle, Star } from "lucide-react";
-import tandooriImg from "@/assets/food-tandoori.jpg";
-import roastImg from "@/assets/food-roast.jpg";
+import tandooriImg from "@/assets/food-tandoori.webp";
+import roastImg from "@/assets/food-roast.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({

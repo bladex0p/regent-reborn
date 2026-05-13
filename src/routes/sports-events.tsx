@@ -19,16 +19,22 @@ export const Route = createFileRoute("/sports-events")({
 });
 
 const FEATURES = [
-  { icon: Tv, title: "Multi-Screen Sports", text: "HD screens throughout — never miss a moment of the match." },
-  { icon: Trophy, title: "Match-Day Atmosphere", text: "Football, cricket, rugby, F1, boxing — every fixture covered." },
-  { icon: Music, title: "Quiz & Live Music Nights", text: "Follow our socials for upcoming themed evenings." },
-  { icon: PartyPopper, title: "Private Party Hire", text: "Birthdays, corporate gatherings and group celebrations." },
+  { icon: Tv, title: "Multi-Screen HD Sport", text: "Big screens throughout the bar and lounge — pin-sharp picture, perfect sightlines from every seat." },
+  { icon: Trophy, title: "Every Major Fixture", text: "Premier League, Champions League, Europa League, Carabao Cup, FA Cup, Six Nations, F1, Cricket, Boxing & UFC — all covered." },
+  { icon: Music, title: "Quiz & Live Music Nights", text: "Themed quiz nights and live music regularly. Follow our Facebook & Instagram for the next date." },
+  { icon: PartyPopper, title: "Private Match-Day Hire", text: "Reserve a section for your group — perfect for derby days, finals and stag-do watch parties." },
+];
+
+const SPORTS = [
+  "Premier League", "Champions League", "Europa League", "FA Cup", "Carabao Cup",
+  "Six Nations Rugby", "Premiership Rugby", "Formula 1", "Cricket — Internationals & T20",
+  "Boxing — World Title Nights", "UFC Pay-Per-View", "World Cups",
 ];
 
 const EVENTS = [
-  { date: "TBA", title: "Event Coming Soon", text: "Follow our Facebook & Instagram for upcoming themes." },
-  { date: "TBA", title: "Event Coming Soon", text: "Match-day specials, quiz nights and live music announced regularly." },
-  { date: "TBA", title: "Event Coming Soon", text: "Get in touch to suggest a screening or theme night." },
+  { date: "EVERY SAT · 2PM", title: "Six Nations Live", text: "Every fixture on the big screens. Pints of Guinness £6 all match long." },
+  { date: "MATCH DAYS", title: "Premier League Sundays", text: "Sharing platters, mixed grills and the best seat in Chertsey." },
+  { date: "FOLLOW US", title: "Quiz & Music Nights", text: "Themed quiz evenings, live acoustic sets and seasonal events — announced on Facebook & Instagram." },
 ];
 
 function SportsPage() {

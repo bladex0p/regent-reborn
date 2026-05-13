@@ -37,19 +37,29 @@ function HomePage() {
         <Hero3D />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 60%, var(--bg-primary))", zIndex: 2 }} />
         <div className="relative max-w-5xl mx-auto px-6 pt-32 pb-24 text-center" style={{ zIndex: 3 }}>
-          <p className="eyebrow">Est. 1676 · Chertsey, Surrey</p>
+          <p className="eyebrow">Est. 1995 · Chertsey, Surrey · NHS Blue Card Welcome</p>
           <h1 className="mt-6 text-glow-gold" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(44px, 7vw, 92px)", color: "var(--cream-primary)", lineHeight: 1.05 }}>
             The Prince <span style={{ color: "var(--gold-primary)" }}>Regent</span>
           </h1>
+          <p className="mt-4" style={{ fontFamily: "var(--font-display)", fontSize: 14, letterSpacing: "0.35em", color: "var(--gold-primary)" }}>
+            CHERTSEY'S HISTORIC PUB · KITCHEN · SPORTS LOUNGE
+          </p>
           <p className="mt-6 mx-auto max-w-2xl" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: 22, color: "var(--cream-secondary)" }}>
-            A traditional British pub serving authentic South Asian cuisine — at the heart of Chertsey since centuries past.
+            Roaring fires, classic British plates and authentic South Asian cuisine — paired with cold pints, every match on the big screens, and a warm Chertsey welcome.
+          </p>
+          <p className="mt-4 mx-auto max-w-xl" style={{ color: "var(--cream-muted)", fontSize: 16 }}>
+            Live <strong style={{ color: "var(--gold-primary)" }}>Six Nations</strong> every Saturday from 2pm · Pints of <strong style={{ color: "var(--gold-primary)" }}>Guinness £6</strong> · Group bookings &amp; private hire welcome.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp">
-              <MessageCircle size={14} /> Book a Table
+              <MessageCircle size={14} /> Reserve a Table
             </a>
-            <Link to="/menu" className="btn-gold">View the Menu</Link>
+            <Link to="/menu" className="btn-gold">Explore Our Menu</Link>
+            <Link to="/sports-events" className="btn-gold">See What's On</Link>
           </div>
+          <p className="mt-6" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", color: "var(--cream-muted)", fontSize: 14 }}>
+            NHS Blue Card holders enjoy an exclusive discount — just show your card at the bar.
+          </p>
         </div>
       </section>
 

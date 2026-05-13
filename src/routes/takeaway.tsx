@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeraldicDivider, FoodPlaceholder } from "@/components/SiteShell";
+import { HeraldicDivider } from "@/components/SiteShell";
+import curryImg from "@/assets/food-curry.jpg";
+import masalaChipsImg from "@/assets/food-masala-chips.jpg";
 import { SITE } from "@/lib/site";
 import { MessageCircle, Phone, Clock, ShoppingBag } from "lucide-react";
 

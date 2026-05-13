@@ -1,23 +1,38 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, MessageCircle, MapPin, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { NAV_LINKS, SITE, HOURS } from "@/lib/site";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close mobile menu + reset scroll on every route change
+  useEffect(() => {
+    setOpen(false);
+    window.scrollTo({ top: 0, left: 0 });
+  }, [pathname]);
+
+  // Lock body scroll only while mobile menu is open; always clean up
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <header
       className="fixed top-0 inset-x-0 z-50 transition-colors duration-300"
       style={{
         backdropFilter: "blur(24px)",
         WebkitBackdropFilter: "blur(24px)",
-        background: scrolled ? "rgba(8,4,2,0.96)" : "rgba(13,8,6,0.82)",
+        background: scrolled || open ? "rgba(8,4,2,0.98)" : "rgba(13,8,6,0.82)",
         borderBottom: "1px solid var(--gold-hairline)",
       }}
     >
@@ -37,27 +52,46 @@ export function Nav() {
             <MessageCircle size={14} /> Book on WhatsApp
           </a>
         </nav>
-        <button className="lg:hidden text-gold" aria-label="Open menu" onClick={() => setOpen(true)} style={{ color: "var(--gold-primary)" }}>
-          <Menu size={28} />
+        <button
+          className="lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          style={{ color: "var(--gold-primary)", position: "relative", zIndex: 10000 }}
+        >
+          {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
       {open && (
         <div
-          className="fixed inset-0 z-[60] lg:hidden flex flex-col items-center justify-center gap-4"
+          className="mobile-menu lg:hidden"
           style={{
-            background: "linear-gradient(180deg, #0D0806 0%, #1a0a08 50%, #0D0806 100%)",
+            position: "fixed",
+            top: 76,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 9999,
+            background: "#0D0806",
             borderTop: "1px solid var(--gold-hairline)",
+            overflowY: "auto",
+            WebkitOverflowScrolling: "touch",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "32px 20px 48px",
+            gap: 4,
           }}
         >
-          <button className="absolute top-6 right-6" aria-label="Close menu" onClick={() => setOpen(false)} style={{ color: "var(--gold-primary)" }}>
-            <X size={32} />
-          </button>
-          <img src="/logo.webp" alt="" className="w-20 h-20 logo-blend mb-4" />
+          <img src="/logo.webp" alt="" className="w-20 h-20 logo-blend mb-6" />
           {NAV_LINKS.map((l) => (
             <Link key={l.to} to={l.to} className="mobile-nav-link" onClick={() => setOpen(false)}>{l.label}</Link>
           ))}
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp mt-6" onClick={() => setOpen(false)}>
+          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp mt-8" onClick={() => setOpen(false)}>
             <MessageCircle size={14} /> Book on WhatsApp
+          </a>
+          <a href={SITE.phoneTel} className="btn-gold mt-3" onClick={() => setOpen(false)}>
+            <Phone size={14} /> {SITE.phone}
           </a>
         </div>
       )}

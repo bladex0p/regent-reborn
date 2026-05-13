@@ -82,7 +82,9 @@ function SportsPage() {
       <HeraldicDivider />
 
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center animate-in">
-        <FoodPlaceholder n={4} caption="Match-day platters & sharing boards" />
+        <figure className="tilt-card overflow-hidden">
+          <img src={barBeersImg} alt="Pints of beer with live sports on screens at The Prince Regent pub Chertsey" loading="lazy" className="w-full h-full object-cover" />
+        </figure>
         <div>
           <p className="eyebrow">Sharing Boards</p>
           <h2 className="section-title mt-4">Built for the big game.</h2>

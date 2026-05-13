@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TakeawayRouteImport } from './routes/takeaway'
+import { Route as SportsEventsRouteImport } from './routes/sports-events'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as GroupBookingRouteImport } from './routes/group-booking'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TakeawayRoute = TakeawayRouteImport.update({
+  id: '/takeaway',
+  path: '/takeaway',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsEventsRoute = SportsEventsRouteImport.update({
+  id: '/sports-events',
+  path: '/sports-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GroupBookingRoute = GroupBookingRouteImport.update({
+  id: '/group-booking',
+  path: '/group-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/group-booking': typeof GroupBookingRoute
+  '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports-events': typeof SportsEventsRoute
+  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/group-booking': typeof GroupBookingRoute
+  '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports-events': typeof SportsEventsRoute
+  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/group-booking': typeof GroupBookingRoute
+  '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sports-events': typeof SportsEventsRoute
+  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/group-booking'
+    | '/menu'
+    | '/sitemap.xml'
+    | '/sports-events'
+    | '/takeaway'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/group-booking'
+    | '/menu'
+    | '/sitemap.xml'
+    | '/sports-events'
+    | '/takeaway'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/group-booking'
+    | '/menu'
+    | '/sitemap.xml'
+    | '/sports-events'
+    | '/takeaway'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  GroupBookingRoute: typeof GroupBookingRoute
+  MenuRoute: typeof MenuRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SportsEventsRoute: typeof SportsEventsRoute
+  TakeawayRoute: typeof TakeawayRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/takeaway': {
+      id: '/takeaway'
+      path: '/takeaway'
+      fullPath: '/takeaway'
+      preLoaderRoute: typeof TakeawayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports-events': {
+      id: '/sports-events'
+      path: '/sports-events'
+      fullPath: '/sports-events'
+      preLoaderRoute: typeof SportsEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/group-booking': {
+      id: '/group-booking'
+      path: '/group-booking'
+      fullPath: '/group-booking'
+      preLoaderRoute: typeof GroupBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  GroupBookingRoute: GroupBookingRoute,
+  MenuRoute: MenuRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SportsEventsRoute: SportsEventsRoute,
+  TakeawayRoute: TakeawayRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

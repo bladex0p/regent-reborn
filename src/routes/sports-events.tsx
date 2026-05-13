@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeraldicDivider } from "@/components/SiteShell";
-import barBeersImg from "@/assets/bar-beers.jpg";
+import barBeersImg from "@/assets/bar-beers.webp";
 import { SITE } from "@/lib/site";
 import { Tv, Trophy, Music, PartyPopper, MessageCircle } from "lucide-react";
 

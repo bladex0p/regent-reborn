@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Hero3D } from "@/components/Hero3D";
 import { HeraldicDivider } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import { MENU } from "@/lib/menu";
 import { MessageCircle, Star } from "lucide-react";
-import tandooriImg from "@/assets/food-tandoori.jpg";
-import roastImg from "@/assets/food-roast.jpg";
+import tandooriImg from "@/assets/food-tandoori.webp";
+import roastImg from "@/assets/food-roast.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,7 +15,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Traditional British pub with authentic South Asian cuisine. Live sports, events and group bookings in Chertsey." },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: "/logo.webp", fetchpriority: "high" } as any,
+    ],
   }),
   component: HomePage,
 });
@@ -33,8 +35,7 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden grain-overlay" style={{ minHeight: "92vh" }}>
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, var(--crimson-glow), transparent 70%), var(--bg-primary)", zIndex: 0 }} />
-        <Hero3D />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 30%, var(--crimson-glow), transparent 65%), radial-gradient(ellipse at 80% 80%, var(--gold-glow), transparent 60%), var(--bg-primary)", zIndex: 0 }} />
         <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(180deg, transparent 60%, var(--bg-primary))", zIndex: 2 }} />
         <div className="relative max-w-5xl mx-auto px-6 pt-32 pb-24 text-center" style={{ zIndex: 3 }}>
           <p className="eyebrow">Est. 1995 · Chertsey, Surrey · NHS Blue Card Welcome</p>

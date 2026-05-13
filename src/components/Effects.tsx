@@ -27,20 +27,7 @@ export function ScrollReveal() {
   return null;
 }
 
-// Tilt only — no Lenis (was hijacking scroll), no custom cursor (UX issue)
+// Tilt removed for performance — was pulling in vanilla-tilt and adding mousemove listeners
 export function ClientFx() {
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    let cleanup: Array<() => void> = [];
-    (async () => {
-      try {
-        const VT = (await import("vanilla-tilt")).default;
-        const cards = document.querySelectorAll<HTMLElement>(".tilt-card");
-        VT.init(Array.from(cards), { max: 6, speed: 400, glare: true, "max-glare": 0.12, scale: 1.01 } as any);
-        cleanup.push(() => cards.forEach((c: any) => c.vanillaTilt && c.vanillaTilt.destroy()));
-      } catch {}
-    })();
-    return () => cleanup.forEach((fn) => fn());
-  }, []);
   return null;
 }

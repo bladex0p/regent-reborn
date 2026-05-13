@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { MENU } from "@/lib/menu";
 import { HeraldicDivider } from "@/components/SiteShell";
-import tandooriImg from "@/assets/food-tandoori.jpg";
+import tandooriImg from "@/assets/food-tandoori.webp";
 import { SITE } from "@/lib/site";
 import { Flame, Leaf, Crown, MessageCircle } from "lucide-react";
 

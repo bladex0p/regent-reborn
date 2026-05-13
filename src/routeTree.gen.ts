@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TakeawayRouteImport } from './routes/takeaway'
 import { Route as SportsEventsRouteImport } from './routes/sports-events'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MenuRouteImport } from './routes/menu'
@@ -17,11 +16,6 @@ import { Route as GroupBookingRouteImport } from './routes/group-booking'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TakeawayRoute = TakeawayRouteImport.update({
-  id: '/takeaway',
-  path: '/takeaway',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SportsEventsRoute = SportsEventsRouteImport.update({
   id: '/sports-events',
   path: '/sports-events',
@@ -60,7 +54,6 @@ export interface FileRoutesByFullPath {
   '/menu': typeof MenuRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-events': typeof SportsEventsRoute
-  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +62,6 @@ export interface FileRoutesByTo {
   '/menu': typeof MenuRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-events': typeof SportsEventsRoute
-  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +71,6 @@ export interface FileRoutesById {
   '/menu': typeof MenuRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sports-events': typeof SportsEventsRoute
-  '/takeaway': typeof TakeawayRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +81,6 @@ export interface FileRouteTypes {
     | '/menu'
     | '/sitemap.xml'
     | '/sports-events'
-    | '/takeaway'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +89,6 @@ export interface FileRouteTypes {
     | '/menu'
     | '/sitemap.xml'
     | '/sports-events'
-    | '/takeaway'
   id:
     | '__root__'
     | '/'
@@ -108,7 +97,6 @@ export interface FileRouteTypes {
     | '/menu'
     | '/sitemap.xml'
     | '/sports-events'
-    | '/takeaway'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,18 +106,10 @@ export interface RootRouteChildren {
   MenuRoute: typeof MenuRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SportsEventsRoute: typeof SportsEventsRoute
-  TakeawayRoute: typeof TakeawayRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/takeaway': {
-      id: '/takeaway'
-      path: '/takeaway'
-      fullPath: '/takeaway'
-      preLoaderRoute: typeof TakeawayRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sports-events': {
       id: '/sports-events'
       path: '/sports-events'
@@ -182,8 +162,17 @@ const rootRouteChildren: RootRouteChildren = {
   MenuRoute: MenuRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SportsEventsRoute: SportsEventsRoute,
-  TakeawayRoute: TakeawayRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

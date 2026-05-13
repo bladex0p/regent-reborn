@@ -11,7 +11,6 @@ export const SITE = {
 export const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
-  { to: "/takeaway", label: "Takeaway" },
   { to: "/sports-events", label: "Sports & Events" },
   { to: "/group-booking", label: "Group Booking" },
   { to: "/contact", label: "Contact" },

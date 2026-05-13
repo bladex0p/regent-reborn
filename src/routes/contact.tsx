@@ -24,8 +24,14 @@ function ContactPage() {
         <div className="max-w-5xl mx-auto px-6 py-24 text-center relative z-10">
           <p className="eyebrow">Visit · Call · Message</p>
           <h1 className="mt-4 text-glow-gold" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 6vw, 72px)", color: "var(--cream-primary)" }}>
-            Find <span style={{ color: "var(--gold-primary)" }}>Us</span>
+            Come Find Us in the <span style={{ color: "var(--gold-primary)" }}>Heart of Chertsey</span>
           </h1>
+          <p className="mt-5 mx-auto max-w-2xl" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: 19, color: "var(--cream-secondary)" }}>
+            We'd love to hear from you. Drop in for a pint, call to book a table, or message us on WhatsApp — we reply within minutes.
+          </p>
+          <p className="mt-3" style={{ color: "var(--cream-muted)", fontSize: 14 }}>
+            NHS Blue Card holders enjoy an exclusive discount — just show your card at the bar.
+          </p>
         </div>
       </section>
 

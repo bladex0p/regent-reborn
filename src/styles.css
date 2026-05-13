@@ -189,10 +189,35 @@ label.label-gold {
   text-align: center; padding: 20px; min-height: 200px;
 }
 
-/* Animate in (fail-safe: visible by default, transition on .is-visible toggle) */
-.animate-in { opacity: 0.001; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1); }
-.animate-in.is-visible { opacity: 1; transform: none; }
+/* Animate in — visible by default to guarantee no blank sections; gentle lift remains for JS-enabled clients */
+.animate-in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+html.js-ready .animate-in:not(.is-visible) { opacity: 0; transform: translateY(24px); }
+html.js-ready .animate-in.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .animate-in { opacity: 1 !important; transform: none !important; } }
+
+/* Mobile nav legibility */
+.mobile-nav-link {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cream-primary);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+.mobile-nav-link:hover, .mobile-nav-link.active { color: var(--gold-primary); border-color: var(--gold-primary); }
+
+/* Logo — clip the white background to a circle so it sits seamlessly on dark surfaces */
+.logo-blend {
+  background: transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  filter: drop-shadow(0 0 18px var(--gold-glow));
+  mix-blend-mode: normal;
+}
 
 /* Section headings */
 .eyebrow {
@@ -208,5 +233,4 @@ label.label-gold {
 /* Map filter */
 .map-frame iframe { filter: grayscale(90%) sepia(30%) brightness(0.8) contrast(1.1); border: 0; }
 
-/* Logo blends with dark bg (removes white card around webp) */
-.logo-blend { mix-blend-mode: lighten; filter: drop-shadow(0 0 18px var(--gold-glow)); background: transparent; }
+/* (logo-blend defined above with circular mask) */

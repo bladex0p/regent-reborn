@@ -5,8 +5,8 @@ import { useEffect } from "react";
 export function ScrollReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
+    document.documentElement.classList.add("js-ready");
     const els = document.querySelectorAll<HTMLElement>(".animate-in");
-    // Always reveal anything already in viewport on mount, plus everything on iOS where IO can be flaky
     const reveal = (el: Element) => el.classList.add("is-visible");
     if (!("IntersectionObserver" in window)) {
       els.forEach(reveal);
@@ -21,8 +21,7 @@ export function ScrollReveal() {
       if (r.top < window.innerHeight && r.bottom > 0) reveal(el);
       else io.observe(el);
     });
-    // Final safety net — guarantee everything visible after 1.5s
-    const t = window.setTimeout(() => els.forEach(reveal), 1500);
+    const t = window.setTimeout(() => els.forEach(reveal), 1200);
     return () => { io.disconnect(); window.clearTimeout(t); };
   }, []);
   return null;

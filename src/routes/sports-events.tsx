@@ -37,6 +37,14 @@ const EVENTS = [
   { date: "FOLLOW US", title: "Quiz & Music Nights", text: "Themed quiz evenings, live acoustic sets and seasonal events — announced on Facebook & Instagram." },
 ];
 
+// Manually editable weekly fixtures — update each week
+const FIXTURES = [
+  { competition: "Premier League", home: "Arsenal", away: "Chelsea", day: "Saturday", time: "12:30", note: "Showing on the big screen" },
+  { competition: "Premier League", home: "Man City", away: "Liverpool", day: "Sunday", time: "16:30", note: "Sharing platters available" },
+  { competition: "Six Nations", home: "England", away: "Scotland", day: "Saturday", time: "16:45", note: "Guinness £6 all match" },
+  { competition: "Champions League", home: "Real Madrid", away: "Bayern", day: "Tuesday", time: "20:00", note: "Reserve your table" },
+];
+
 function SportsPage() {
   return (
     <>

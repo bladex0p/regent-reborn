@@ -42,14 +42,21 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="fixed inset-0 z-[60] lg:hidden flex flex-col items-center justify-center gap-7" style={{ background: "radial-gradient(ellipse at center, var(--crimson-glow), var(--bg-primary) 70%)" }}>
+        <div
+          className="fixed inset-0 z-[60] lg:hidden flex flex-col items-center justify-center gap-4"
+          style={{
+            background: "linear-gradient(180deg, #0D0806 0%, #1a0a08 50%, #0D0806 100%)",
+            borderTop: "1px solid var(--gold-hairline)",
+          }}
+        >
           <button className="absolute top-6 right-6" aria-label="Close menu" onClick={() => setOpen(false)} style={{ color: "var(--gold-primary)" }}>
             <X size={32} />
           </button>
+          <img src="/logo.webp" alt="" className="w-20 h-20 logo-blend mb-4" />
           {NAV_LINKS.map((l) => (
-            <Link key={l.to} to={l.to} className="nav-link text-lg" onClick={() => setOpen(false)}>{l.label}</Link>
+            <Link key={l.to} to={l.to} className="mobile-nav-link" onClick={() => setOpen(false)}>{l.label}</Link>
           ))}
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold mt-4" onClick={() => setOpen(false)}>
+          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp mt-6" onClick={() => setOpen(false)}>
             <MessageCircle size={14} /> Book on WhatsApp
           </a>
         </div>

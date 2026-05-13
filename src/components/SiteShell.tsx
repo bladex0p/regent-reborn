@@ -23,7 +23,7 @@ export function Nav() {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-[76px]">
         <Link to="/" className="flex items-center gap-3" aria-label="The Prince Regent home">
-          <img src="/logo.webp" alt="The Prince Regent Pub Chertsey logo" className="h-14 w-14 rounded-full" style={{ boxShadow: "0 0 20px var(--gold-glow)" }} />
+          <img src="/logo.webp" alt="The Prince Regent Pub Chertsey logo" className="h-14 w-14 logo-blend" />
           <span className="hidden sm:flex flex-col leading-tight">
             <span style={{ fontFamily: "var(--font-display)", fontSize: 13, letterSpacing: "0.18em", color: "var(--gold-primary)" }}>THE PRINCE REGENT</span>
             <span style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: 11, color: "var(--cream-muted)", letterSpacing: "0.2em" }}>CHERTSEY · EST. 1676</span>
@@ -114,7 +114,7 @@ export function Footer() {
       <HeraldicDivider />
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
         <div>
-          <img src="/logo.webp" alt="The Prince Regent Chertsey logo" loading="lazy" className="w-[110px] mx-auto md:mx-0" />
+          <img src="/logo.webp" alt="The Prince Regent Chertsey logo" loading="lazy" className="w-[110px] mx-auto md:mx-0 logo-blend" />
           <p className="mt-5 text-center md:text-left" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", color: "var(--cream-muted)", fontSize: 14 }}>
             Traditional British Pub · South Asian Cuisine · Est. 1676
           </p>

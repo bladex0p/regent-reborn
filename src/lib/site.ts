@@ -18,11 +18,11 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HOURS = [
-  ["Monday", "12:00 PM – 11:00 PM"],
-  ["Tuesday", "12:00 PM – 11:00 PM"],
-  ["Wednesday", "12:00 PM – 11:00 PM"],
-  ["Thursday", "12:00 PM – 11:00 PM"],
-  ["Friday", "12:00 PM – 11:00 PM"],
-  ["Saturday", "12:00 PM – 11:00 PM"],
-  ["Sunday", "12:00 PM – 10:30 PM"],
+  ["Monday", "11:00 – 23:00"],
+  ["Tuesday", "11:00 – 23:00"],
+  ["Wednesday", "11:00 – 23:00"],
+  ["Thursday", "11:00 – 23:00"],
+  ["Friday", "11:00 – 23:00"],
+  ["Saturday", "11:00 – 00:00"],
+  ["Sunday", "12:00 – 17:00"],
 ] as const;

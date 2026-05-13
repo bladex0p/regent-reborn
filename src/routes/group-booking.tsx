@@ -19,12 +19,14 @@ export const Route = createFileRoute("/group-booking")({
 });
 
 const FEATURES = [
-  "Private dining for groups up to 50 guests",
-  "Bespoke menu and drink packages",
-  "Group bar tabs and event coordination",
-  "Tailored set menus for tours and parties",
-  "Family celebrations, corporate hire, and private events",
-  "Dedicated team to plan every detail",
+  "Birthday parties, anniversaries & milestone celebrations",
+  "Corporate lunches, team dinners & Christmas parties",
+  "Sports watch parties — derby days, finals, Six Nations weekends",
+  "Hen & stag gatherings, farewells, family reunions",
+  "Bespoke set menus and drinks packages tailored to your group",
+  "Reserved areas and semi-private spaces for groups up to 50",
+  "Group bar tabs and dedicated event coordination",
+  "NHS Blue Card holders — discount applies to group bookings",
 ];
 
 function GroupPage() {

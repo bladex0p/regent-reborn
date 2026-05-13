@@ -1,0 +1,105 @@
+export type Tag = "spicy" | "veg" | "pick";
+export interface Dish { name: string; price: string; desc?: string; tags?: Tag[] }
+export interface Category { id: string; title: string; items: Dish[] }
+
+export const MENU: Category[] = [
+  { id: "starters", title: "Starters", items: [
+    { name: "Poppadum (each)", price: "£1.25", desc: "Crispy Indian lentil wafer, light and crunchy. Served with mango sauce." },
+    { name: "Onion Bhaji", price: "£5.50", desc: "Crispy onion fritters made with spiced gram flour batter.", tags: ["spicy", "veg", "pick"] },
+    { name: "Chicken Pakora", price: "£5.50", desc: "Tender chicken pieces fried in spiced gram flour batter.", tags: ["pick"] },
+    { name: "Meat / Veg Samosa", price: "£5.00", desc: "Crispy pastry filled with spiced meat or vegetable stuffing." },
+  ]},
+  { id: "tandoori", title: "BBQ & Tandoori Grills", items: [
+    { name: "Small Mixed Grill", price: "£15.99", desc: "Assorted tandoori meats grilled with spices, served sizzling hot.", tags: ["pick"] },
+    { name: "Large Mixed Grill", price: "£19.99", desc: "Generous platter of assorted tandoori meats, sizzling and flavourful.", tags: ["pick"] },
+    { name: "Lamb Chops", price: "£13.99", desc: "Tender lamb chops marinated in spices, grilled to perfection.", tags: ["spicy"] },
+    { name: "Chicken Tikka", price: "£9.99", desc: "Boneless chicken pieces marinated in spices, grilled until juicy." },
+    { name: "Lamb Kebab", price: "£9.99", desc: "Minced lamb mixed with spices, grilled on skewers to perfection." },
+    { name: "Chicken Wings", price: "£9.99", desc: "Spicy marinated chicken wings, crispy fried and bursting with flavour.", tags: ["spicy"] },
+    { name: "Chicken Tikka Roll", price: "£11.99", desc: "Grilled spiced chicken wrapped in soft flatbread with fresh fillings." },
+    { name: "Lamb Kebab Roll", price: "£11.99", desc: "Spiced grilled lamb kebabs wrapped in soft bread with fresh toppings." },
+  ]},
+  { id: "burgers", title: "Burgers & Steaks", items: [
+    { name: "Chicken Fillet Burger", price: "£13.99", desc: "Tender grilled chicken fillet with fresh lettuce, tomato, and mayo." },
+    { name: "Cajun Chicken Fillet Burger", price: "£14.99", desc: "Spicy Cajun chicken fillet burger with lettuce, tomato, and mayo.", tags: ["spicy"] },
+    { name: "Chicken Burger", price: "£7.00", desc: "Juicy grilled chicken served with fresh lettuce, tomato, and sauce." },
+    { name: "4 oz Beef Burger", price: "£7.50", desc: "Juicy 4 oz beef patty served with fresh lettuce and sauce." },
+    { name: "8 oz Beef Burger", price: "£11.99", desc: "Juicy 8 oz beef patty served with fresh lettuce and sauce." },
+  ]},
+  { id: "chicken", title: "Chicken Dishes", items: [
+    { name: "Chicken Biryani", price: "£12.99", desc: "Fragrant basmati rice cooked with tender chicken and aromatic spices.", tags: ["pick"] },
+    { name: "Chicken Dhansak", price: "£9.99", desc: "Tender chicken cooked in spiced lentil sauce with tangy flavours." },
+    { name: "Chicken Korma", price: "£11.99", desc: "Creamy, mild chicken curry cooked with nuts, cream, and spices." },
+    { name: "Chicken Madras", price: "£10.99", desc: "Spicy, tangy chicken curry with bold flavours from South Indian spices.", tags: ["spicy"] },
+    { name: "Palak Chicken", price: "£11.50", desc: "Tender chicken cooked in creamy spinach sauce with aromatic spices." },
+    { name: "Chicken Tikka Masala", price: "£11.99", desc: "Grilled chicken pieces simmered in creamy, spiced tomato sauce.", tags: ["pick"] },
+    { name: "Butter Chicken", price: "£12.50", desc: "Tender chicken cooked in rich, buttery tomato sauce with mild spices." },
+  ]},
+  { id: "lamb", title: "Lamb Dishes", items: [
+    { name: "Lamb Biryani", price: "£14.99", desc: "Aromatic basmati rice layered with tender lamb and flavourful spices.", tags: ["pick"] },
+    { name: "Lamb Curry", price: "£11.99", desc: "Tender lamb pieces simmered in a rich, spiced curry sauce." },
+    { name: "Lamb Dhansak", price: "£11.99", desc: "Slow-cooked lamb in spiced lentil sauce with sweet and tangy flavours." },
+    { name: "Lamb Korma", price: "£11.99", desc: "Creamy, mild lamb curry cooked with nuts, cream, and spices." },
+    { name: "Lamb Madras", price: "£11.50", desc: "Spicy, tangy lamb curry with bold flavours from South Indian spices.", tags: ["spicy"] },
+    { name: "Palak Lamb", price: "£11.50", desc: "Succulent lamb cooked in spiced spinach sauce with aromatic herbs." },
+    { name: "Keema Peas Curry", price: "£10.99", desc: "Minced lamb cooked with green peas in a spiced curry sauce." },
+  ]},
+  { id: "vegetarian", title: "Vegetarian Dishes", items: [
+    { name: "Bombay Aloo", price: "£8.99", desc: "Spiced potatoes sautéed with herbs, onions, and fragrant Indian spices.", tags: ["veg"] },
+    { name: "Palak Aloo", price: "£8.99", desc: "Potatoes cooked in a spiced spinach gravy with aromatic seasonings.", tags: ["veg"] },
+    { name: "Tarka Daal", price: "£8.99", desc: "Lentils cooked with garlic, cumin, and tempered aromatic spices.", tags: ["veg"] },
+    { name: "Mixed Vegetable Curry", price: "£8.99", desc: "Assorted seasonal vegetables cooked in a mildly spiced curry sauce.", tags: ["veg"] },
+    { name: "Paneer Makhani", price: "£10.99", desc: "Soft paneer cubes simmered in rich, tomato cream sauce.", tags: ["veg", "pick"] },
+  ]},
+  { id: "prawns", title: "Prawn Dishes", items: [
+    { name: "King Prawn Biryani", price: "£15.99", desc: "Fragrant basmati rice cooked with succulent king prawns and spices.", tags: ["pick"] },
+    { name: "King Prawn Curry", price: "£14.99", desc: "Succulent king prawns cooked in a rich, spiced curry sauce." },
+    { name: "King Prawn Chilli Curry", price: "£14.99", desc: "Juicy king prawns cooked in a fiery, spiced chilli sauce.", tags: ["spicy"] },
+  ]},
+  { id: "indo-chinese", title: "Indo-Chinese", items: [
+    { name: "Chilli Paneer", price: "£9.99", desc: "Crispy paneer cubes tossed in a spicy, tangy chilli sauce.", tags: ["spicy", "veg"] },
+    { name: "Chilli Chicken", price: "£9.99", desc: "Spicy, tangy chicken pieces stir-fried with chilli peppers and spices.", tags: ["spicy"] },
+    { name: "Chicken Noodles", price: "£9.99", desc: "Stir-fried noodles with tender chicken, vegetables, and savoury sauces." },
+    { name: "Veg Noodles", price: "£9.99", desc: "Stir-fried noodles with vegetables and savoury sauces.", tags: ["veg"] },
+    { name: "Chicken Momo", price: "£9.99", desc: "Steamed dumplings filled with spiced minced chicken. Served with dipping sauce.", tags: ["pick"] },
+    { name: "Lamb Momo", price: "£9.99", desc: "Steamed dumplings filled with spiced minced lamb. Served with dipping sauce." },
+    { name: "Veg Momo", price: "£9.99", desc: "Steamed dumplings filled with spiced mixed vegetables. Served with dipping sauce.", tags: ["veg"] },
+  ]},
+  { id: "rice", title: "Rice Dishes", items: [
+    { name: "Plain Rice", price: "£3.50" },
+    { name: "Pilau Rice", price: "£3.75" },
+    { name: "Mushroom Fried Rice", price: "£4.50" },
+    { name: "Egg Fried Rice", price: "£4.50" },
+    { name: "Keema Rice", price: "£6.00" },
+    { name: "Chicken Fried Rice", price: "£6.00" },
+  ]},
+  { id: "naan", title: "Naan Breads", items: [
+    { name: "Plain Naan", price: "£3.00" },
+    { name: "Garlic Naan", price: "£3.50" },
+    { name: "Peshwari Naan", price: "£4.00" },
+    { name: "Keema Naan", price: "£5.00" },
+    { name: "Cheese Naan", price: "£4.50" },
+    { name: "Chilli Naan", price: "£3.50" },
+  ]},
+  { id: "extras", title: "Extras", items: [
+    { name: "Chips", price: "£3.50" },
+    { name: "Sweet Chilli Chips", price: "£6.00" },
+    { name: "Cheese", price: "£2.25" },
+    { name: "Fried Egg", price: "£2.50" },
+  ]},
+  { id: "lunch", title: "Lunch Specials", items: [
+    { name: "Egg and Bacon", price: "£6.99" },
+    { name: "Ham and Cheese", price: "£6.99" },
+    { name: "Tuna and Mayo", price: "£6.99" },
+    { name: "Sausage, Egg and Chips", price: "£6.99" },
+    { name: "Omelette and Chips", price: "£6.99" },
+  ]},
+  { id: "kids", title: "Kids Menu", items: [
+    { name: "Chicken Nuggets and Chips", price: "£6.99" },
+    { name: "Fish Fingers and Chips", price: "£6.99" },
+  ]},
+  { id: "desserts", title: "Desserts", items: [
+    { name: "Vanilla Ice Cream", price: "£5.00" },
+    { name: "Gulab Jamun", price: "£3.00" },
+  ]},
+];

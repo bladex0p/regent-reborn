@@ -120,6 +120,41 @@ function SportsPage() {
 
       <HeraldicDivider />
 
+      <section className="max-w-6xl mx-auto px-6 animate-in">
+        <div className="text-center">
+          <p className="eyebrow">This Week's Fixtures</p>
+          <h2 className="section-title mt-4">Showing Live at The Prince Regent</h2>
+          <p className="mt-4 mx-auto max-w-2xl" style={{ color: "var(--cream-secondary)" }}>
+            All times shown in UK time. Tables go fast on match day — reserve via WhatsApp.
+          </p>
+        </div>
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {FIXTURES.map((f, i) => (
+            <article key={i} className="tilt-card p-6">
+              <div style={{ fontFamily: "var(--font-display)", color: "var(--gold-primary)", fontSize: 10, letterSpacing: "0.22em" }}>{f.competition}</div>
+              <div className="mt-4" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", color: "var(--cream-primary)", fontSize: 22, lineHeight: 1.2 }}>
+                {f.home} <span style={{ color: "var(--gold-muted)" }}>vs</span> {f.away}
+              </div>
+              <div className="mt-4 flex items-center justify-between" style={{ fontFamily: "var(--font-display)", fontSize: 11, letterSpacing: "0.18em", color: "var(--cream-secondary)" }}>
+                <span>{f.day}</span>
+                <span style={{ color: "var(--gold-primary)" }}>{f.time}</span>
+              </div>
+              <p className="mt-3" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", color: "var(--cream-muted)", fontSize: 13 }}>{f.note}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <p style={{ color: "var(--cream-muted)", fontSize: 13 }}>
+            Follow us on <a href="https://facebook.com" style={{ color: "var(--gold-primary)" }}>Facebook</a> and <a href="https://instagram.com" style={{ color: "var(--gold-primary)" }}>Instagram</a> for live updates and last-minute fixtures.
+          </p>
+          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp mt-5">
+            <MessageCircle size={14} /> Reserve a Match-Day Table
+          </a>
+        </div>
+      </section>
+
+      <HeraldicDivider />
+
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center animate-in">
         <figure className="tilt-card overflow-hidden">
           <img src={barBeersImg} alt="Pints of beer with live sports on screens at The Prince Regent pub Chertsey" loading="lazy" className="w-full h-full object-cover" />

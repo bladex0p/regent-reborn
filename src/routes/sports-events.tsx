@@ -44,14 +44,19 @@ function SportsPage() {
         <div className="max-w-5xl mx-auto px-6 py-24 text-center relative z-10">
           <p className="eyebrow">Match Day · Live Music · Quiz Nights</p>
           <h1 className="mt-4 text-glow-gold" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(40px, 6vw, 72px)", color: "var(--cream-primary)" }}>
-            Sports <span style={{ color: "var(--gold-primary)" }}>& Events</span>
+            The Ultimate Sports <span style={{ color: "var(--gold-primary)" }}>Viewing Experience</span> in Chertsey
           </h1>
           <p className="mt-5 mx-auto max-w-2xl" style={{ fontFamily: "var(--font-heading)", fontStyle: "italic", fontSize: 19, color: "var(--cream-secondary)" }}>
-            Big screens. Big atmosphere. Bigger flavours. Reserve your spot for match day.
+            Live sport. Cold pints. Unbeatable atmosphere. HD screens throughout, sharp sightlines from every seat, and a kitchen that knows how to feed a crowd on match day.
           </p>
-          <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp mt-10">
-            <MessageCircle size={14} /> Reserve Your Spot
-          </a>
+          <div className="mt-6 inline-block px-6 py-3" style={{ border: "1px solid var(--gold-primary)", borderRadius: 999, background: "rgba(196,146,42,0.08)" }}>
+            <span style={{ fontFamily: "var(--font-display)", color: "var(--gold-primary)", fontSize: 13, letterSpacing: "0.2em" }}>SIX NATIONS LIVE · EVERY SAT 2PM · GUINNESS £6</span>
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-gold btn-whatsapp">
+              <MessageCircle size={14} /> Book Your Match Day Table
+            </a>
+          </div>
         </div>
       </section>
 

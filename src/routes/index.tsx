@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "The Prince Regent — Traditional British Pub & South Asian Restaurant in Chertsey" },
-      { name: "description", content: "A historic Chertsey pub pairing classic British hospitality with authentic South Asian cuisine. Live sports, group bookings and takeaway in Surrey KT16 9AH." },
+      { name: "description", content: "Historic Chertsey pub since 1995 — classic British food, authentic South Asian cuisine, live Six Nations, Premier League and group bookings in Surrey KT16 9AH." },
       { property: "og:title", content: "The Prince Regent — Pub & Restaurant in Chertsey, Surrey" },
       { property: "og:description", content: "Traditional British pub with authentic South Asian cuisine. Live sports, events and group bookings in Chertsey." },
       { property: "og:url", content: "/" },

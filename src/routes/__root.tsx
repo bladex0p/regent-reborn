@@ -71,7 +71,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "The Prince Regent — Pub & Restaurant in Chertsey, Surrey" },
-      { name: "description", content: "Traditional British pub serving authentic South Asian cuisine in Chertsey, Surrey. Sports screenings, group bookings, takeaway and live events." },
+      { name: "description", content: "Traditional British pub serving authentic South Asian cuisine in Chertsey, Surrey. Live sports, Six Nations, group bookings and private hire." },
       { property: "og:site_name", content: "The Prince Regent" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/logo.webp" },

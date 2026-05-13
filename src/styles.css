@@ -233,5 +233,4 @@ html.js-ready .animate-in.is-visible { opacity: 1; transform: none; }
 /* Map filter */
 .map-frame iframe { filter: grayscale(90%) sepia(30%) brightness(0.8) contrast(1.1); border: 0; }
 
-/* Logo blends with dark bg (removes white card around webp) */
-.logo-blend { mix-blend-mode: lighten; filter: drop-shadow(0 0 18px var(--gold-glow)); background: transparent; }
+/* (logo-blend defined above with circular mask) */

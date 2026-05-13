@@ -74,10 +74,13 @@ function GroupPage() {
 
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start animate-in">
         <div>
-          <p className="eyebrow">What We Offer</p>
-          <h2 className="section-title mt-4">Tailored, every time.</h2>
+          <p className="eyebrow">Your Occasion · Our Venue</p>
+          <h2 className="section-title mt-4">Plan something unforgettable.</h2>
           <p className="mt-5" style={{ color: "var(--cream-secondary)" }}>
-            Planning a birthday, corporate outing, group tour or private party? We love hosting groups of all sizes. Our team will craft a bespoke experience around your guests, your menu, and your budget.
+            From intimate birthday dinners to full-venue takeovers, The Prince Regent is one of Chertsey's most welcoming venues for group celebrations. Our team will craft a bespoke experience around your guests, your menu and your budget — and the warm atmosphere does the rest.
+          </p>
+          <p className="mt-3" style={{ color: "var(--cream-secondary)" }}>
+            Reserved areas, semi-private spaces and exclusive use options available. Minimum group size 10 guests; larger parties of 25+ require a small deposit to secure the date. Get in touch and we'll handle the rest.
           </p>
           <ul className="mt-8 space-y-3">
             {FEATURES.map((f) => (

@@ -120,6 +120,23 @@ function HomePage() {
 
       <HeraldicDivider />
 
+      {/* SUNDAY ROAST FEATURE */}
+      <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center animate-in">
+        <div className="md:order-2">
+          <p className="eyebrow">Sunday Tradition</p>
+          <h2 className="section-title mt-4">A proper Sunday roast.</h2>
+          <p className="mt-5" style={{ color: "var(--cream-secondary)" }}>
+            Slow-roasted meats, golden Yorkshires, hand-cut roast potatoes and rich gravy — served by the open fire, the way a Sunday should be.
+          </p>
+          <Link to="/menu" className="btn-gold mt-7">See What's Cooking</Link>
+        </div>
+        <figure className="tilt-card overflow-hidden md:order-1">
+          <img src={roastImg} alt="Traditional British Sunday roast served by the fire at The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover" />
+        </figure>
+      </section>
+
+      <HeraldicDivider />
+
       {/* CTA */}
       <section className="relative grain-overlay py-24 text-center" style={{ background: "linear-gradient(135deg, var(--crimson-deep), var(--bg-primary))" }}>
         <div className="max-w-3xl mx-auto px-6 relative z-10">

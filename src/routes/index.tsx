@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Hero3D } from "@/components/Hero3D";
-import { HeraldicDivider, FoodPlaceholder } from "@/components/SiteShell";
+import { HeraldicDivider } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import { MENU } from "@/lib/menu";
 import { MessageCircle, Star } from "lucide-react";
+import tandooriImg from "@/assets/food-tandoori.jpg";
+import roastImg from "@/assets/food-roast.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +57,9 @@ function HomePage() {
 
       {/* WELCOME */}
       <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center animate-in">
-        <FoodPlaceholder n={1} caption="Tandoori grills, stone-baked naan & cask ales" />
+        <figure className="tilt-card overflow-hidden">
+          <img src={tandooriImg} alt="Tandoori chicken tikka platters with mint yogurt at The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover" />
+        </figure>
         <div>
           <p className="eyebrow">A Royal Welcome</p>
           <h2 className="section-title mt-4">Two great traditions, one historic pub.</h2>
@@ -112,6 +116,23 @@ function HomePage() {
             </blockquote>
           ))}
         </div>
+      </section>
+
+      <HeraldicDivider />
+
+      {/* SUNDAY ROAST FEATURE */}
+      <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center animate-in">
+        <div className="md:order-2">
+          <p className="eyebrow">Sunday Tradition</p>
+          <h2 className="section-title mt-4">A proper Sunday roast.</h2>
+          <p className="mt-5" style={{ color: "var(--cream-secondary)" }}>
+            Slow-roasted meats, golden Yorkshires, hand-cut roast potatoes and rich gravy — served by the open fire, the way a Sunday should be.
+          </p>
+          <Link to="/menu" className="btn-gold mt-7">See What's Cooking</Link>
+        </div>
+        <figure className="tilt-card overflow-hidden md:order-1">
+          <img src={roastImg} alt="Traditional British Sunday roast served by the fire at The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover" />
+        </figure>
       </section>
 
       <HeraldicDivider />

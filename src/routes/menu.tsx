@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { MENU } from "@/lib/menu";
-import { HeraldicDivider, FoodPlaceholder } from "@/components/SiteShell";
+import { HeraldicDivider } from "@/components/SiteShell";
+import tandooriImg from "@/assets/food-tandoori.jpg";
 import { SITE } from "@/lib/site";
 import { Flame, Leaf, Crown, MessageCircle } from "lucide-react";
 
@@ -84,7 +85,11 @@ function MenuPage() {
                 </article>
               ))}
             </div>
-            {idx === 1 && <div className="mt-12"><FoodPlaceholder n={2} caption="Sizzling tandoori platters from our charcoal grill" /></div>}
+            {idx === 1 && (
+              <figure className="mt-12 tilt-card overflow-hidden">
+                <img src={tandooriImg} alt="Sizzling tandoori platters from the charcoal grill at The Prince Regent Chertsey" loading="lazy" className="w-full h-auto object-cover" />
+              </figure>
+            )}
           </section>
         ))}
       </div>

@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeraldicDivider, FoodPlaceholder } from "@/components/SiteShell";
+import { HeraldicDivider } from "@/components/SiteShell";
+import curryImg from "@/assets/food-curry.jpg";
+import masalaChipsImg from "@/assets/food-masala-chips.jpg";
 import { SITE } from "@/lib/site";
 import { MessageCircle, Phone, Clock, ShoppingBag } from "lucide-react";
 
@@ -70,7 +72,10 @@ function TakeawayPage() {
           </ul>
           <Link to="/menu" className="btn-gold mt-8">View Full Menu</Link>
         </div>
-        <FoodPlaceholder n={3} caption="Curries, grills & breads — packed for collection" />
+        <figure className="tilt-card overflow-hidden grid grid-cols-2 gap-1">
+          <img src={curryImg} alt="Butter chicken curry with chips, ready for takeaway from The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover col-span-2" />
+          <img src={masalaChipsImg} alt="Masala spiced chips takeaway from The Prince Regent Chertsey" loading="lazy" className="w-full h-full object-cover col-span-2" />
+        </figure>
       </section>
 
       <HeraldicDivider />

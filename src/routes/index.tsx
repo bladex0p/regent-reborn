@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Hero3D } from "@/components/Hero3D";
 import { HeraldicDivider } from "@/components/SiteShell";
 import { SITE } from "@/lib/site";
 import { MENU } from "@/lib/menu";
